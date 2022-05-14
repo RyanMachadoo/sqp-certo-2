@@ -1,24 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda de Contatos</title>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title> Agenda de Contatos </title>
+  
 </head>
 <body>
-    <h1>Agenda de Contatos</h1>
-    <form action="/contats" method="POST">
-        <input name='name'>
-        <input name='email '>
-        <input name='phone'>
-        <button type="submit">Adicionar</button>
-    </form>
+  
+<!-- ------------ CRIANDO O FORMULÁRIO ----------- -->
 
-    <ul>
-        {% for item in todos %}
-            <li>{{ item.title }}</li>
-        {% endfor %}
-    </ul>
+  <h1> Agenda de Contatos </h1>
+  
+  <form action="/create" method="POST">
+    <input name="name" placeholder="Nome">
+    <input email ="email" placeholder="E-mail">
+    <input phone="phone" placeholder="Telefone">
+
+    
+    <button type="submit">
+      Adicionar
+    </button>
+  </form>
+  
+<!-- ------ EXIBIÇÃO DA LISTA DE TO DO: ---------- -->
+<!-- -esses % é pra fazer em python- -->
+  
+  <ul>
+    {% for item in contacts %}
+      <li> {{item.name}} </li>
+    {% endfor %} 
+  </ul>
+
+  
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title> Agenda de Contatos </title>
+  
+</head>
+<body>
+  
+<!-- ------------ CRIANDO O FORMULÁRIO ----------- -->
+
+  <h1> Agenda de Contatos </h1>
+  
+  <form action="/create" method="POST">
+    <input name="name" placeholder="Nome">
+    <input email ="email" placeholder="E-mail">
+    <input phone="phone" placeholder="Telefone">
+
+    
+    <button type="submit">
+      Adicionar
+    </button>
+  </form>
+  
+<!-- ------ EXIBIÇÃO DA LISTA DE TO DO: ---------- -->
+<!-- -esses % é pra fazer em python- -->
+  
+  <ul>
+    {% for item in contacts %}
+      <li> {{item.name}} </li>
+    {% endfor %} 
+  </ul>
+
+  
 </body>
 </html>
